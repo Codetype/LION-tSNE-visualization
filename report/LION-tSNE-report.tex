@@ -1,0 +1,122 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
+\title{k-NN Sampling for Visualization of Dynamic Data Using LION-tSNE - analysis}
+
+
+\author{
+ Gędłek Paweł \\
+  Wydział Informatyki, Elektroniki i Telekomunikacji\\
+  Akademia Górniczo-Hutnicza \\
+  Kraków \\
+  \texttt{gedlek@student.agh.edu.pl} \\
+  \And
+Wójtowicz Patryk \\
+  Wydział Informatyki, Elektroniki i Telekomunikacji\\
+  Akademia Górniczo-Hutnicza \\
+  Kraków \\
+  \texttt{wojtowicz@student.agh.edu.pl} \\
+}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+TODO
+\end{abstract}
+
+
+% keywords can be removed
+% keywords{First keyword \and Second keyword \and More}
+
+
+\section{Struktura raportu}
+\label{sec:report_structure}
+\paragraph{}
+\tableofcontents
+
+\section{Metoda tSNE}
+\label{sec:tSNE}
+\paragraph{}
+\subsection{Czym właściwie jest tSNE?}
+Algorytm tSNE(t-Distributed Stochastic Neighbor Embedding) którego
+autorami sa Laurens van der Maaten oraz Geoffrey Hinton bazuje na
+metodzie SNE, której głównym załozeniem jest reprezentacja
+wielowymiarowych danych w mozliwy do zobrazowania dla człowieka dwulub
+trzy-wymiarowej przestrzeni. Osiaga sie to poprzez modelowanie wysoko
+wymiarowych obiektów poprzez dwu- lub trzy-wymiarowe punkty w taki
+sposób, ze zblizone obiekty modelowane sa poprzez bliskie sobie punkty, a
+oddalone obiekty modelowane są poprzez oddalone od siebie punkty z
+duzym prawdopodobienstwem.
+
+\subsection{Algorytm tSNE - podstawy matematyczne}
+\begin{itemize}
+\item 
+Algorytm tSNE konwertuje odległosci miedzy parami punktów w
+funkcje rozkładu prawdopodobienstwa okreslajaca podobienstwo
+pomiedzy parami punktów.
+\item 
+Rozbieznosc miedzy podobienstwem wysoko wymiarowych danych z
+nisko-wymiarowymi danymi jest mierzona poprzez dywergencje
+Kullbacka-Leiblera i minimalizowana metoda gradientowa
+poszukiwania minimum lokalnego
+\end{itemize}
+
+Mamy dany zbiór wejsciowy $X = {x1, x2...xn}$ gdzie dla kazdego $x_i \in R^{D}$
+jest D-wymiarowym wektorem. Zbiór ten zostanie przekształcony do
+postaci $Y = {y1, y2...yn}$ gdzie kazde $y_i \in R^d$ jest d-wymiarowym
+wektorem oraz $d << D$ (zazwyczaj d = 2 lub 3). Podobienstwo pomiedzy
+para punktów wejsciowych xi oraz xj oznaczamy poprzez pj/i , które jest
+prawdopodobienstwem wybrania $x_j$ jako sasiada $x_i$ według funkcji gestosci
+prawdopodobienstwa na rozkładzie normalnym gdzie $x_i$ stanowi centrum.
+$p_{j/i}$ definiujemy jako:
+
+...
+
+\section{Metoda LION tSNE}
+\label{sec:lionTSNE}
+\paragraph{}
+
+\section{kNN sampling}
+\label{sec:kNN}
+\paragraph{}
+
+\section{Wnioski}
+\label{sec:conclusions}
+TODO
+
+\bibliographystyle{unsrt}  
+%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+%%% and comment out the ``thebibliography'' section.
+
+
+%%% Comment out this section when you \bibliography{references} is enabled.
+\clearpage
+\renewcommand\refname{Źródła}
+\begin{thebibliography}{1}
+
+\bibitem{paper} 
+Bheekya Dharamsotu ; K. Swarupa Rani ; Salman Abdul Moiz ; C. Raghavendra Rao
+\newblock Paper: k-NN Sampling for Visualization of Dynamic Data Using LION-tSNE. 
+\newblock {\em https://ieeexplore.ieee.org/abstract/document/8990391}
+
+\end{thebibliography}
+
+
+
+\end{document}
